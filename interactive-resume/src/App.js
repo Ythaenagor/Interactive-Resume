@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 
-function App() {
+// page imports
+import Yellow from './pages/dungeon/Yellow.js';
+import Green from './pages/dungeon/Green.js';
+
+const App = () => {
+
+  const location = useLocation();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AnimatePresence>
+      <Routes location={location} key={location.pathname}>
+        <Route path="" element={<Yellow />}/>
+        <Route path="/green" element={<Green />}/>
+      </Routes>
+    </AnimatePresence>
   );
 }
 

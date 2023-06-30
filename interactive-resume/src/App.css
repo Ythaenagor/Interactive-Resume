@@ -1,5 +1,35 @@
+html{
+  background-color: black;
+}
+
+.testroom{
+  width:100vw;
+  height:100vh;
+  background-color: green;
+  padding:auto;
+  position:absolute;
+}
+
+#left{
+  left:-100%;
+  background-color: yellow;
+}
+#right{
+  left:100%;
+  background-color: yellow;
+}
+#up{
+  top:-100%;
+  background-color: yellow;
+}
+#down{
+  top:100%;
+  background-color: yellow;
+}
+
 .App {
   text-align: center;
+  overflow: hidden;
 }
 
 .App-logo {
