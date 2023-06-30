@@ -9,7 +9,7 @@ const Yellow = (props) => {
     return(
         <Room location='/' d={props.d}>
             <p>spacer</p>
-            <button onClick={() => {window.location.href+="green"}}>Back</button>
+            <button onClick={() => {navigate('/green')}}>Back</button>
         </Room>
     )
 }
