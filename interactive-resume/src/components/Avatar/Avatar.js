@@ -41,7 +41,7 @@ const Avatar = () => {
         if(dx > max_speed){dx = max_speed}
         if(dx < 0 - max_speed){dx = 0 - max_speed}
         if(dy > max_speed){dy = max_speed}
-        if(dy < 0 - max_speed){dy = -1}
+        if(dy < 0 - max_speed){dy = 0 - max_speed}
     }
 
     const handleKeyRelease = (event) => {
@@ -78,7 +78,7 @@ const Avatar = () => {
         document.addEventListener('keydown', handleKeyPress);
         document.addEventListener('keyup', handleKeyRelease);
 
-        // loop to translate movement variables to document
+        // game loop for movement and collision detection
         setInterval(()=>{
             // set position variables
             x += dx
@@ -87,6 +87,32 @@ const Avatar = () => {
             // apply position variables to component
             avatar.style.left = x + 'px';
             avatar.style.top = y + 'px';
+
+            // get list of solid objects present
+            const solids = document.getElementsByClassName('solid');
+
+            // get current bounding box of avatar
+            const avBox = avatar.getBoundingClientRect();
+
+            // loop through solid objects and check for collision with avatar
+            for(var object of solids){
+                // get bounding box of solid
+                const solidBox = object.getBoundingClientRect();
+
+                // test for intersection between bounding boxes
+                // TODO: allow movement against wall when pressing into it
+                if(!(avBox.right < solidBox.left || avBox.left > solidBox.right || 
+                    avBox.bottom < solidBox.top || avBox.top > solidBox.bottom)){
+                    // if intersection is found, undo last movement step
+                    x -= dx
+                    y -= dy
+
+                    // apply position variables to component
+                    avatar.style.left = x + 'px';
+                    avatar.style.top = y + 'px';
+                }
+            }
+
         }, 10)
 
     },[])

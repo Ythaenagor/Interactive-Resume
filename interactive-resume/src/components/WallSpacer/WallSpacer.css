@@ -1,0 +1,6 @@
+.wallspacer{
+    width:4vw;
+    height:4vw;
+    background-color: blue;
+    flex-grow: 1;
+}

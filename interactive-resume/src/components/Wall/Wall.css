@@ -1,0 +1,37 @@
+.wall{
+    position:absolute;
+    display: flex;
+    justify-content: space-between;
+}
+
+.wallleft{
+    width:4vw;
+    height:100vh;
+    left:0;
+
+    flex-direction: column;
+}
+
+.wallright{
+    width:4vw;
+    height:100vh;
+    right:0;
+
+    flex-direction: column;;
+}
+
+.wallup{
+    width:100vw;
+    height:4vw;
+    top:0;
+
+    flex-direction: row;
+}
+
+.walldown{
+    width:100vw;
+    height:4vw;
+    bottom:0;
+
+    flex-direction: row;
+}
