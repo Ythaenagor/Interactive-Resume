@@ -9,6 +9,8 @@ const exit = (direction, navigator) => {
         parseInt(window.getComputedStyle( nextRoom, null ).getPropertyValue('top'),10)
     ]
 
+    console.log(nextLoc);
+
     // loop through movement until final location reached
     var i=0
     var exitLoop = setInterval(() => {
@@ -22,7 +24,7 @@ const exit = (direction, navigator) => {
 
         if(i>1){
             clearInterval(exitLoop);
-            navigator('/')
+            navigator(nextRoom.getAttribute('location'))
         }
     },10)
 
