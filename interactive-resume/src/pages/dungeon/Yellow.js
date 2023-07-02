@@ -1,7 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import { useState } from "react";
 import Room from "../../components/Room/Room";
-import { exit } from "../../functions/roomfunctions";
 
 const Yellow = (props) => {
     const navigate = useNavigate()

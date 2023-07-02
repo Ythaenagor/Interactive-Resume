@@ -1,7 +1,4 @@
-import { Children } from 'react'
-
 import './Wall.css'
-import WallSpacer from '../WallSpacer/WallSpacer'
 
 // TODO: prop data
 // side: side of screen where wall is located

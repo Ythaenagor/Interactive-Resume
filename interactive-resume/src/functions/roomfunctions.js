@@ -11,7 +11,7 @@ const exit = (direction, navigator) => {
 
     // loop through movement until final location reached
     var i=0
-    setInterval(() => {
+    var exitLoop = setInterval(() => {
         currentRoom.style.left = (0 - nextLoc[0] * (0+i)).toFixed(0) + 'px'
         currentRoom.style.top = (0 - nextLoc[1] * (0+i)).toFixed(0) + 'px'
 
@@ -21,6 +21,7 @@ const exit = (direction, navigator) => {
         i+=0.01;
 
         if(i>1){
+            clearInterval(exitLoop);
             navigator('/')
         }
     },10)
