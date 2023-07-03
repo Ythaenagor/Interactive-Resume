@@ -3,16 +3,22 @@ import Avatar from "../../components/Avatar/Avatar";
 import Wall from "../../components/Wall/Wall";
 import Door from "../../components/Door/Door";
 import WallSpacer from "../../components/WallSpacer/WallSpacer";
-
 import Yellow from "./Yellow";
 
 // TODO: prop info for state
 const Green = (props) => {
 
+    // dictionary translating directions to urls
+    const nextRoomLocations = {
+        'left':'/',
+        'right':'/',
+        'up':'/',
+        'down':'/'
+    }
+
     return(
         <>
-            <Room location='/green' d={props.state === 'unloaded' ? props.d : 'currentRoom'}>
-                {props.state !== 'unloaded' && <Avatar/>}
+            <Room state={props.state} location='/green' d={props.state === 'unloaded' ? props.d : 'currentRoom'} nextRooms={nextRoomLocations}>
                 
                 <Wall side='left'>
                     <WallSpacer/>
@@ -40,10 +46,10 @@ const Green = (props) => {
 
             </Room>
             {props.state !== 'unloaded' && <div className="nextRooms">
-                <Green d='left' state='unloaded'/>
-                <Green d='right' state='unloaded'/>
-                <Green d='up' state='unloaded'/>
-                <Green d='down' state='unloaded'/>
+                <Yellow d='left' state='unloaded'/>
+                <Yellow d='right' state='unloaded'/>
+                <Yellow d='up' state='unloaded'/>
+                <Yellow d='down' state='unloaded'/>
             </div>}
         </>
     )

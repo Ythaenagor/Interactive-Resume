@@ -11,19 +11,15 @@ html{
 
 #left{
   left:-100%;
-  background-color: yellow;
 }
 #right{
   left:100%;
-  background-color: yellow;
 }
 #up{
   top:-100%;
-  background-color: yellow;
 }
 #down{
   top:100%;
-  background-color: yellow;
 }
 
 .App {

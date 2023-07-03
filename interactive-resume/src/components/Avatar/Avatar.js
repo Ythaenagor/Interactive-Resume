@@ -1,10 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { exit } from '../../functions/roomfunctions';
 import './Avatar.css'
-import { useEffect } from 'react';
+import { useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Avatar = () => {
+// TODO: prop info about locations dict
+const Avatar = (props) => {
 
     // navigation handler
     const navigate = useNavigate();
@@ -15,14 +16,18 @@ const Avatar = () => {
     // constant for max movement speed
     const max_speed = 3;
 
-    // avatar and location of avatar, all initialized on component mount
-    var avatar, x, y;
+    // reference of avatar
+    var avatar = null;
+
+    // location of avatar, initialized on component mount
+    var x, y;
 
     // movement variables
     var dx = 0, dy = 0;
 
     // handlers for keys being pressed and released
     const handleKeyPress = (event) => {
+
         // map WASD and arrow keys to appropriate movement values
         switch(event.key){
             case 'w':
@@ -128,13 +133,13 @@ const Avatar = () => {
 
                 // determine direction of door and exit appropriately
                 if(door.classList.contains('doorleft')){
-                    exit('left', navigate);
+                    exit('left', navigate, props.locations['left']);
                 } else if(door.classList.contains('doorright')){
-                    exit('right', navigate);
+                    exit('right', navigate, props.locations['right']);
                 } else if(door.classList.contains('doorup')){
-                    exit('up', navigate);
+                    exit('up', navigate, props.locations['up']);
                 } else if(door.classList.contains('doordown')){
-                    exit('down', navigate);
+                    exit('down', navigate, props.locations['down']);
                 } else {
                     console.log('Error: invalid door')
                 }
@@ -145,27 +150,47 @@ const Avatar = () => {
 
     // when component mounts
     useEffect(()=> {
+
+        // get entry direction from url, translate into avatar starting position
+        const queryParameters = new URLSearchParams(window.location.search)
+        switch(queryParameters.get('door')){
+            case 'left':
+                avatar.style.left='90vw';
+                avatar.style.top='45vh';
+                break;
+            case 'right':
+                avatar.style.left='6vw';
+                avatar.style.top='45vh';
+                break;
+            case 'up':
+                avatar.style.left='48vw';
+                avatar.style.top='75vh'
+            default:
+                break;
+        }
         
         // initialize variables from above
-        avatar = document.getElementById('avatar');
         x = parseInt(window.getComputedStyle( avatar, null ).getPropertyValue('left'),10)
         y = parseInt(window.getComputedStyle( avatar, null ).getPropertyValue('top'),10)
+
 
         // set listener for keypresses on document
         document.addEventListener('keydown', handleKeyPress);
         document.addEventListener('keyup', handleKeyRelease);
 
         // start game loop
-        if(gameLoopId === 0){
-            gameLoopId = setInterval(gameLoop, 10)
-        }
+        gameLoopId = setInterval(gameLoop, 10)
         
-
+        // cleanup to run on component unmount
+        return function cleanup() {
+            document.removeEventListener('keydown', handleKeyPress);
+            document.removeEventListener('keyup', handleKeyPress);
+        }
     },[])
 
     return(
         <>
-            <div id='avatar'/>
+            <div id='avatar' ref={node => {avatar = node}}/>
         </>
     )
 }

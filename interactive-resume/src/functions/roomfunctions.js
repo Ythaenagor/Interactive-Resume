@@ -1,4 +1,4 @@
-const exit = (direction, navigator) => {
+const exit = (direction, navigator, location) => {
     // get current and next room
     var currentRoom = document.getElementById('currentRoom')
     var nextRoom = document.getElementById(direction)
@@ -8,8 +8,6 @@ const exit = (direction, navigator) => {
         parseInt(window.getComputedStyle( nextRoom, null ).getPropertyValue('left'),10),
         parseInt(window.getComputedStyle( nextRoom, null ).getPropertyValue('top'),10)
     ]
-
-    console.log(nextLoc);
 
     // loop through movement until final location reached
     var i=0
@@ -24,12 +22,10 @@ const exit = (direction, navigator) => {
 
         if(i>1){
             clearInterval(exitLoop);
-            navigator(nextRoom.getAttribute('location'))
+            navigator(location + '?door=' + direction)
         }
-    },10)
 
-    // go to new page
-    //setTimeout(() => {navigator(nextRoom.getAttribute('location'));},1000)
+    },10)
 }
 
 export { exit }
