@@ -155,16 +155,17 @@ const Avatar = (props) => {
         const queryParameters = new URLSearchParams(window.location.search)
         switch(queryParameters.get('door')){
             case 'left':
-                avatar.style.left='90vw';
-                avatar.style.top='45vh';
+                avatar.style.left='90%';
+                avatar.style.top='45%';
                 break;
             case 'right':
-                avatar.style.left='6vw';
-                avatar.style.top='45vh';
+                avatar.style.left='6%';
+                avatar.style.top='45%';
                 break;
             case 'up':
-                avatar.style.left='48vw';
-                avatar.style.top='75vh'
+                avatar.style.left='48%';
+                avatar.style.top='75%'
+                break;
             default:
                 break;
         }

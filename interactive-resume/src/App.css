@@ -4,7 +4,7 @@ html{
 
 .testroom{
   width:100vw;
-  height:100vh;
+  height:48vw;
   background-color: green;
   position:absolute;
 }

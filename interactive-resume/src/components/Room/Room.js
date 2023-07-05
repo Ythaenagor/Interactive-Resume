@@ -1,5 +1,6 @@
 import React from 'react';
 
+import './Room.css';
 import Avatar from '../Avatar/Avatar';
 
 const Room = (props) => {

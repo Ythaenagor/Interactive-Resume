@@ -1,5 +1,4 @@
 import Room from "../../components/Room/Room";
-import Avatar from "../../components/Avatar/Avatar";
 import Wall from "../../components/Wall/Wall";
 import Door from "../../components/Door/Door";
 import WallSpacer from "../../components/WallSpacer/WallSpacer";

@@ -6,7 +6,7 @@
 
 .wallleft{
     width:4vw;
-    height:100vh;
+    height:100%;
     left:0;
 
     flex-direction: column;
@@ -14,14 +14,14 @@
 
 .wallright{
     width:4vw;
-    height:100vh;
+    height:100%;
     right:0;
 
     flex-direction: column;;
 }
 
 .wallup{
-    width:100vw;
+    width:100%;
     height:4vw;
     top:0;
 
@@ -29,7 +29,7 @@
 }
 
 .walldown{
-    width:100vw;
+    width:100%;
     height:4vw;
     bottom:0;
 
