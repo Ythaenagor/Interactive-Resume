@@ -1,0 +1,171 @@
+@font-face {
+    font-family: infinity;
+    src: url(../../../public/fonts/MADEINFINITY\ PERSONALUSE-Regular.otf);
+}
+
+@font-face {
+    font-family: c64;
+    src: url(../../../public/fonts/C64_Pro_Mono-STYLE.otf);
+}
+
+:root{
+    --background-color: rgb(240, 240, 200);
+    --section-color: rgb(255, 255, 221);
+    --label-color: rgb(100, 200, 200);
+    --highlight-color: rgb(64, 224, 208);
+    --shadow-color: rgb(0, 100, 100);
+}
+
+html{
+    background-color: var(--background-color);
+    overflow-y:scroll;
+}
+
+#mainBody {
+    padding:3vh 10vw;
+}
+
+h1 {
+    font-family: infinity;
+    font-size: 9vh;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: xx-large;
+    font-family: infinity;
+}
+
+p {
+    font-size:large;
+}
+
+em {
+    font-family: c64;
+    font-style:normal;
+}
+
+#header {
+    height:fit-content;
+    display: flex;
+    margin-bottom:3em;
+}
+
+#iconborder {
+    padding:1em;
+    margin:1em;
+    width:30vh;
+    height:30vh;
+    background-color: var(--highlight-color);
+    border-radius: 100%;
+}
+
+#icon {
+    height:25vh;
+    padding:2em;
+    image-rendering: pixelated;
+
+    margin-top:3%;
+    margin-left:5%;
+
+    position: relative;
+    top:-10%;
+}
+
+.bullet {
+    text-indent: -5em;
+    padding-left: 6em;
+    padding-right: 1em;
+}
+
+.section {
+    border: 1px solid black;
+    border-radius: 1em;
+    background-color: var(--section-color);
+    width: 60vw;
+    margin-left:10em;
+    padding-bottom: 1.5em;
+    margin-bottom: 5em;
+    box-shadow: 5px 5px 5px var(--shadow-color);
+}
+
+#education {
+    display: flex;
+}
+
+.label {
+    position: relative;
+    left:5em;
+    top:-1.7em;
+    width:fit-content;
+    padding:0 2em;
+    background-color: var(--label-color);
+    box-shadow: 5px 5px var(--shadow-color);
+}
+
+.sectionImages{
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+    padding-top:1.5em;
+    width: 20%;
+}
+
+.sectionImages img{
+    width:100%;
+    padding-bottom:2em;
+}
+
+#skillColumns{
+    display:flex;
+    justify-content: space-around;
+    width:100%;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    width:fit-content;
+}
+
+#skillColumns em{
+    background-color: var(--label-color);
+    color:white;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+#skillColumns em:first-of-type{
+    padding-left: 1em;
+}
+#skillColumns em:last-of-type{
+    padding-right: 1em;
+}
+
+.list{
+    margin-left:3em;
+}
+
+footer{
+    width:100%;
+    height: 10vh;
+    background-color: var(--label-color);
+
+    padding-left:3%;
+    padding-right:3%;
+    padding-top:1%;
+    padding-bottom:1%;
+}
+
+footer p{
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+footer a{
+    color:var(--shadow-color)
+}
+
+footer a:hover{
+    color:var(--background-color);
+}

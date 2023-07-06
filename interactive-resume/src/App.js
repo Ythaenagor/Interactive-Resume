@@ -6,6 +6,7 @@ import { AnimatePresence } from 'framer-motion';
 // page imports
 import Yellow from './pages/dungeon/Yellow.js';
 import Green from './pages/dungeon/Green.js';
+import SimpleMain from './pages/simple/SimpleMain';
 
 const App = () => {
 
@@ -14,7 +15,8 @@ const App = () => {
   return (
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
-        <Route path="" element={<Yellow />}/>
+        <Route path="/" element={<SimpleMain/>}/>
+        <Route path="/yellow" element={<Yellow />}/>
         <Route path="/green" element={<Green />}/>
       </Routes>
     </AnimatePresence>

@@ -2,7 +2,8 @@
     /* force avatar to front */
     z-index: 100;
 
-    width:4.49vw;
+    /* TODO: switch width to 4.33 and figure out the height from there */
+    width:4.49vw; 
     height:6vw;
 
     background: url(../../../public/sprites/Avatar.png) 0 0;
