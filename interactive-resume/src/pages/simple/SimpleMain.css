@@ -21,6 +21,13 @@ html{
     overflow-y:scroll;
 }
 
+canvas{
+    width:100vw;
+    height:100vh;
+    position:fixed;
+    z-index: -5;
+}
+
 #mainBody {
     padding:3vh 10vw;
 }

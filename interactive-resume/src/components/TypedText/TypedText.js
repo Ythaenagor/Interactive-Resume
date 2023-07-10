@@ -10,6 +10,7 @@ const wholetext = {
     },
 }
 
+// animation values for letters
 const letter = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 }
@@ -26,6 +27,7 @@ const Letter = (props) => {
     )
 }
 
+// replaces map function, to allow giving a key to each letter
 const mapLetters = (text) => {
     var output = []
     for(var i = 0; i < text.length; i++){

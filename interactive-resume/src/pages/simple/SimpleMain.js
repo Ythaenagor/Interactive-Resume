@@ -1,10 +1,80 @@
-import TypedText from '../../components/TypedText/TypedText';
-import './SimpleMain.css'
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import './SimpleMain.css'
+import TypedText from '../../components/TypedText/TypedText';
 
 const SimpleMain = () => {
+
+    // reference value for background canvas
+    const background = useRef(null);
+
+    // interval to handle background rendering
+    var bkgdInterval;
+
+    // list of floating squares for background
+    var squares = [];
+
+    // square generation parameters
+    const square_color = 'rgba(0, 100, 100, '; // expression is finished in render function
+    const max_count = 10;
+    const generation_chance = 30; // percent chance of new square being generated
+    const max_size = 100;
+
+    // function to render background
+    const renderBackground = (background) => {
+
+        var canvas = background.getContext('2d');
+
+        // if max square count has not been reached, chance to generate new square
+        if(squares.length < max_count && Math.floor(Math.random() * 100) <= generation_chance){
+            // generate starting parameters for new square
+            var start_size = Math.floor(Math.random() * max_size);
+            var x = Math.floor(Math.random() * background.width);
+            var y = Math.floor(Math.random() * background.height);
+
+            // append params to list of squares
+            squares.push([x, y, start_size]);
+        }
+
+        // clear previous frame of canvas
+        canvas.fillStyle = "rgb(240, 240, 200)";
+        canvas.fillRect(0, 0, background.width, background.height);
+
+        // render and update all squares in list
+        squares.forEach((square)=>{
+            // set opacity proportional to size
+            canvas.fillStyle = square_color + (0.5 - (square[2]/max_size)) + ')'
+            // draw square
+            canvas.fillRect(square[0]-(square[2]/2), square[1]-(square[2]/2), square[2], square[2]);
+
+            // update square size
+            square[2] -= 0.25;
+
+            // if square is too small, delete it
+            if(square[2] < 1){
+                var delIndex = squares.indexOf(square)
+
+                squares = squares.slice(0,delIndex).concat(squares.slice(delIndex+1))
+                //squares.delete(squares.indexOf(square));
+            }
+        })
+    }
+
+    // on component mount
+    useEffect(() => {
+        // start loop of background rendering
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        bkgdInterval = setInterval(()=>{renderBackground(background.current)}, 30);
+
+        // cleanup function
+        return(()=> {
+            clearInterval(bkgdInterval)
+        })
+    },[])
+
     return(
         <>
+            <canvas ref={background}/>
             <div id='mainBody'>
                 <div id='header'>
                     <div id='header-text'>
