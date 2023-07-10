@@ -15,8 +15,8 @@ const App = () => {
   return (
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<SimpleMain/>}/>
-        <Route path="/yellow" element={<Yellow />}/>
+        <Route path="/simple" element={<SimpleMain/>}/>
+        <Route path="/dungeon" element={<Yellow />}/>
         <Route path="/green" element={<Green />}/>
       </Routes>
     </AnimatePresence>

@@ -5,20 +5,28 @@ html{
 
 .testroom{
     width:100vw;
-    height:48vw;
-    background-color: green;
+    height:46vw;
+
+    background-image: url(../../../public/sprites/dungeon.png);
+    background-repeat: no-repeat;
+    background-size:contain;
+    image-rendering: pixelated;
+
     position:absolute;
 }
 
 #left{
-left:-100%;
+    left:-100vw;
 }
+
 #right{
-left:100%;
+    left:100vw;
 }
+
 #up{
-top:-100%;
+    top:-100vh;
 }
+
 #down{
-top:100%;
+    top:100vh;
 }
