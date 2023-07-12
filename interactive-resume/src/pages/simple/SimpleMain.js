@@ -2,8 +2,10 @@ import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import './SimpleMain.css'
 import TypedText from '../../components/TypedText/TypedText';
+import { useNavigate } from 'react-router-dom';
 
 const SimpleMain = () => {
+    const navigate = useNavigate();
 
     // reference value for background canvas
     const background = useRef(null);
@@ -37,6 +39,7 @@ const SimpleMain = () => {
         }
 
         // clear previous frame of canvas
+        // this isn't a great way to do it as it hides the CSS background color, but clearRect has issues on Chrome
         canvas.fillStyle = "rgb(240, 240, 200)";
         canvas.fillRect(0, 0, background.width, background.height);
 
@@ -73,7 +76,7 @@ const SimpleMain = () => {
     },[])
 
     return(
-        <>
+        <div id='wrapper'>
             <canvas ref={background}/>
             <div id='mainBody'>
                 <div id='header'>
@@ -168,8 +171,9 @@ const SimpleMain = () => {
                 transition={{duration: 1}}
             >
                 <p><em>Thank you for your time!</em>If I've piqued your interest, feel free to email me at <a href='mailto:ethanagor@gmail.com'>ethanagor@gmail.com</a>, or call or text at <a href='tel:+1774-571-4865'>(774)-571-4865</a>. I look forward to hearing from you!</p>
+                <button id='homebutton' onClick={()=>{navigate("/")}}>Return to Landing Page</button>
             </motion.footer>
-        </>
+        </div>
     )
 }
 

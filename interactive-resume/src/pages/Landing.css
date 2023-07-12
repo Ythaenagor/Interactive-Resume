@@ -1,0 +1,110 @@
+:root{
+    --light-blue: #aea2ff;
+    --dark-blue:#4738a5;
+}
+
+@font-face {
+    font-family: infinity;
+    src: url(../../public/fonts/MADEINFINITY\ PERSONALUSE-Regular.otf);
+}
+
+@font-face {
+    font-family: c64;
+    src: url(../../public/fonts/C64_Pro_Mono-STYLE.otf);
+}
+
+@media screen and (min-width: 1024px){
+    #mobile{
+        display: none;
+    }
+
+    #desktop{
+        width:100vw;
+        height:100vh;
+        background-color: var(--light-blue);
+        padding:10vh 10vw;
+    }
+
+    #desktop-inner{
+        width:80%;
+        height:80%;
+        background-color: var(--dark-blue);
+        padding:1em;
+    }
+
+    .title{
+        font-family: c64;
+        text-align: center;
+        color: var(--light-blue);
+    }
+
+    .left-aligned{
+        font-family: c64;
+        text-align: left;
+        color: var(--light-blue);
+
+    }
+
+    .menu-button{
+        display: block;
+        font-family: c64;
+        font-size: large;
+        background-color: transparent;
+        color:var(--light-blue);
+        border: none;
+        padding: 0.5em;
+    }
+
+    .menu-button:hover{
+        background-color: var(--light-blue);
+        color: var(--dark-blue);
+    }
+}
+
+@media screen and (max-width:1024px){
+    #desktop{
+        display: none;
+    }
+
+    #mobile{
+        width:100vw;
+        height:100vh;
+        background-color: var(--light-blue);
+        padding:5% 5%;
+    }
+
+    #mobile-inner{
+        width:90%;
+        height:90%;
+        background-color: var(--dark-blue);
+        padding-top:1em;
+    }
+
+    .title{
+        font-family: c64;
+        color:var(--light-blue);
+        text-align: center;
+    }
+
+    .mobile-warning{
+        color: var(--light-blue);
+        text-align: center;
+    }
+
+    .menu-button{
+        width:100%;
+        text-align: left;
+        display: block;
+        font-family: c64;
+        font-size: large;
+        background-color: transparent;
+        color:var(--light-blue);
+        border: none;
+        padding: 0.5em;
+    }
+
+    .menu-button:active{
+        background-color: var(--light-blue);
+        color: var(--dark-blue);
+    }
+}

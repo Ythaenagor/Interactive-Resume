@@ -4,9 +4,12 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
 // page imports
+import Landing from './pages/Landing';
+import SimpleMain from './pages/simple/SimpleMain';
+
+// dungeon pages
 import Yellow from './pages/dungeon/Yellow.js';
 import Green from './pages/dungeon/Green.js';
-import SimpleMain from './pages/simple/SimpleMain';
 
 const App = () => {
 
@@ -15,6 +18,7 @@ const App = () => {
   return (
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Landing/>}/>
         <Route path="/simple" element={<SimpleMain/>}/>
         <Route path="/dungeon" element={<Yellow />}/>
         <Route path="/green" element={<Green />}/>
