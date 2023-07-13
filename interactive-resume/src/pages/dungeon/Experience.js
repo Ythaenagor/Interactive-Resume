@@ -2,26 +2,26 @@ import Room from "../../components/Room/Room";
 import Wall from "../../components/Wall/Wall";
 import Door from "../../components/Door/Door";
 import WallSpacer from "../../components/WallSpacer/WallSpacer";
-import Yellow from "./Yellow";
+import Education from "./Education";
+import FloorSign from "../../components/FloorSign/FloorSign";
+import Skills from "./Skills";
+import Contact from "./Contact";
 
 // TODO: prop info for state
-const Green = (props) => {
+const Experience = (props) => {
 
     // dictionary translating directions to urls
     const nextRoomLocations = {
-        'left':'/dungeon',
-        'right':'/dungeon',
-        'up':'/dungeon',
-        'down':'/dungeon'
+        'right':'/skills',
+        'up':'/education',
+        'down':'/contact'
     }
 
     return(
         <>
-            <Room state={props.state} location='/green' d={props.state === 'unloaded' ? props.d : 'currentRoom'} nextRooms={nextRoomLocations}>
+            <Room state={props.state} d={props.state === 'unloaded' ? props.d : 'currentRoom'} nextRooms={nextRoomLocations}>
                 
                 <Wall side='left'>
-                    <WallSpacer/>
-                    <Door side='left'/>
                     <WallSpacer/>
                 </Wall>
 
@@ -43,15 +43,18 @@ const Green = (props) => {
                     <WallSpacer/>
                 </Wall>
 
+                <FloorSign x='45' y='9' point='up'>Education</FloorSign>
+                <FloorSign x='84' y='21' point='right'>Skills</FloorSign>
+                <FloorSign x='44' y='34' point='down'>Contact Me</FloorSign>
+
             </Room>
             {props.state !== 'unloaded' && <div className="nextRooms">
-                <Yellow d='left' state='unloaded'/>
-                <Yellow d='right' state='unloaded'/>
-                <Yellow d='up' state='unloaded'/>
-                <Yellow d='down' state='unloaded'/>
+                <Education d='up' state='unloaded'/>
+                <Skills d='right' state='unloaded'/>
+                <Contact d='down' state='unloaded'/>
             </div>}
         </>
     )
 }
 
-export default Green;
+export default Experience;

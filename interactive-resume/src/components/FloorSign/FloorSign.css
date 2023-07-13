@@ -1,0 +1,36 @@
+.floorsign{
+    font-family: c64;
+    font-size: 1.2vw;
+    position: relative;
+    text-align: center;
+    width:fit-content;
+    max-width: 20vw;
+    margin: 0;
+}
+
+.point{
+    transform:translate(-50%,-50%);
+    font-size:2vw;
+    position: absolute;
+    margin: 0;
+}
+
+.pointRight{
+    left:110%;
+    top:50%;
+}
+
+.pointLeft{
+    top:50%;
+    right:100%;
+}
+
+.pointUp{
+    left:50%;
+    top:-0.75em;
+}
+
+.pointDown{
+    top: 200%;
+    left:50%;
+}

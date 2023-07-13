@@ -2,21 +2,22 @@ import Room from "../../components/Room/Room";
 import Wall from "../../components/Wall/Wall";
 import Door from "../../components/Door/Door";
 import WallSpacer from "../../components/WallSpacer/WallSpacer";
-import Green from "./Green"
+import Yellow from "./Yellow";
 
-const Yellow = (props) => {
+// TODO: prop info for state
+const Template = (props) => {
 
     // dictionary translating directions to urls
     const nextRoomLocations = {
-        'left':'/green',
-        'right':'/green',
-        'up':'/green',
-        'down':'/green'
+        'left':'/dungeon',
+        'right':'/dungeon',
+        'up':'/dungeon',
+        'down':'/dungeon'
     }
-    
+
     return(
         <>
-            <Room state={props.state} location='/yellow' d={props.state === 'unloaded' ? props.d : 'currentRoom'} nextRooms={nextRoomLocations}>
+            <Room state={props.state} d={props.state === 'unloaded' ? props.d : 'currentRoom'} nextRooms={nextRoomLocations}>
                 
                 <Wall side='left'>
                     <WallSpacer/>
@@ -44,13 +45,13 @@ const Yellow = (props) => {
 
             </Room>
             {props.state !== 'unloaded' && <div className="nextRooms">
-                <Green d='left' state='unloaded'/>
-                <Green d='right' state='unloaded'/>
-                <Green d='up' state='unloaded'/>
-                <Green d='down' state='unloaded'/>
+                <Yellow d='left' state='unloaded'/>
+                <Yellow d='right' state='unloaded'/>
+                <Yellow d='up' state='unloaded'/>
+                <Yellow d='down' state='unloaded'/>
             </div>}
         </>
     )
 }
 
-export default Yellow;
+export default Template;
