@@ -167,41 +167,67 @@ const Avatar = (props) => {
 
     // when component mounts
     useEffect(()=> {
+        // wait for room to mount
+        setTimeout(()=>{
+            var entryDoor, doorShape
 
-        // get entry direction from url, translate into avatar starting position
-        const queryParameters = new URLSearchParams(window.location.search)
-        switch(queryParameters.get('door')){
-            case 'left':
-                avatar.current.style.left='88vw';
-                avatar.current.style.top='10vw';
-                break;
-            case 'right':
-                avatar.current.style.left='6vw';
-                avatar.current.style.top='10vw';
-                avatar.current.classList.add('flipped');
-                break;
-            case 'up':
-                avatar.current.style.left='48vw';
-                avatar.current.style.top='16vw'
-                break;
-            default:
-                break;
-        }
-        
-        // initialize variables from above
-        x = parseInt(window.getComputedStyle( avatar.current, null ).getPropertyValue('left'),10) / window.innerWidth * 100;
-        y = parseInt(window.getComputedStyle( avatar.current, null ).getPropertyValue('top'),10) / window.innerHeight * 100;
+            // get entry direction from url, translate into avatar starting position relative to appropriate door
+            const queryParameters = new URLSearchParams(window.location.search)
+            switch(queryParameters.get('door')){
+                case 'left':
+                    // select relevant door from current room
+                    entryDoor = document.getElementById('currentRoom').getElementsByClassName('doorright')[0];
+                    doorShape = entryDoor.getBoundingClientRect();
+
+                    // place avatar relative to center of door
+                    avatar.current.style.top=(doorShape.top+doorShape.bottom)*0.45 + 'px';
+                    avatar.current.style.left='90vw'
+                    break;
+                case 'right':
+                    avatar.current.style.left='6vw';
+                    avatar.current.style.top='22vw';
+                    avatar.current.classList.add('flipped');
+                    break;
+                case 'up':
+                    // select relevant door from current room
+                    entryDoor = document.getElementById('currentRoom').getElementsByClassName('doordown')[0];
+                    doorShape = entryDoor.getBoundingClientRect();
+
+                    // place avatar relative to center of door (uses 2.05 because the exact average is slightly off for some reason)
+                    avatar.current.style.left=(doorShape.left + doorShape.right) / 2.05 + 'px';
+                    avatar.current.style.top='33vw';
+                    console.log(avatar.current.style.top);
+                    break;
+                case 'down':
+                    // select relevant door from current room
+                    entryDoor = document.getElementById('currentRoom').getElementsByClassName('doorup')[0];
+                    doorShape = entryDoor.getBoundingClientRect();
+                    
+                    // place avatar relative to center of door (uses 2.05 because the exact average is slightly off for some reason)
+                    avatar.current.style.left=(doorShape.left + doorShape.right) / 2.05 + 'px';
+                    avatar.current.style.top='2vw'
+                    break;
+                default:
+                    break;
+            }
+            
+            // initialize variables from above
+            // getcomputedstyle uses px as unit, so this calculates vw from that
+            x = parseInt(window.getComputedStyle( avatar.current, null ).getPropertyValue('left'),10) / window.innerWidth * 100;
+            y = parseInt(window.getComputedStyle( avatar.current, null ).getPropertyValue('top'),10) / window.innerWidth * 100;
 
 
-        // set listener for keypresses on document
-        document.addEventListener('keydown', handleKeyPress);
-        document.addEventListener('keyup', handleKeyRelease);
+            // set listener for keypresses on document
+            document.addEventListener('keydown', handleKeyPress);
+            document.addEventListener('keyup', handleKeyRelease);
 
-        // start game loop
-        gameLoopId = setInterval(gameLoop, 10)
+            // start game loop
+            gameLoopId = setInterval(gameLoop, 10)
 
-        // unhide avatar after first gameloop
-        setTimeout(()=>{avatar.current.classList.remove('hidden');},10);
+            // unhide avatar after first gameloop
+            setTimeout(()=>{avatar.current.classList.remove('hidden');},10);
+
+        },20)
         
         // cleanup to run on component unmount
         return function cleanup() {

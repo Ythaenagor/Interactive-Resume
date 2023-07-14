@@ -2,7 +2,6 @@
     /* force avatar to front */
     z-index: 100;
 
-    /* TODO: switch width to 4.33 and figure out the height from there */
     width:4.49vw; 
     height:6vw;
 

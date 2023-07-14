@@ -39,7 +39,7 @@ const AboutThis = (props) => {
                     <p>This interactive resume was inspired by early Legend of Zelda games and my love of vintage computers. It is written in React.js, and uses Framer Motion for animations on the landing page and the simple layout. All other components, animations, and miscellaneous code was written by me. I also created all sprites and backgrounds using Aseprite.</p>
                 </RaisedSign>
 
-                <RaisedSign x='23' y='33'>
+                <RaisedSign x='23' y='33' highlight>
                     <a href="https://github.com/eshilo-draper/Interactive-Resume" target="_blank" rel="noreferrer"><p>Click here to view the code behind this!</p></a>
                 </RaisedSign>
 

@@ -17,7 +17,7 @@ const RaisedSign = (props) => {
     },[]);
 
     return(
-        <div className={`raisedSign solid ${props.highlight?'highlighted':''}`} ref={sign}>
+        <div className={`raisedSign solid ${props.highlight?'highlighted':''} ${props.small?'small':''}`} ref={sign}>
             {props.children}
         </div>
     )
