@@ -6,16 +6,34 @@
     width:4.49vw; 
     height:6vw;
 
-    background: url(../../../public/sprites/Avatar.png) 0 0;
     background-repeat: no-repeat;
     background-size: cover;
     image-rendering: pixelated;
+    filter:drop-shadow(3px -3px 3px #202);
 
     position:absolute;
-    top:10%;
-    left:48%;
+    top:2vw;
+    left:48vw;
+}
 
+.idle{
+    background: url(../../../public/sprites/Avatar-idle.png) 0 0;
     animation: idle 0.5s steps(3) infinite;
+}
+
+.flipped{
+    transform: scaleX(-1);
+}
+
+#shadow{
+    background-image: url(../../../public/sprites/shadow.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 75%;
+
+    width:3vw;
+    height:2vw;
+    position: relative;
 }
 
 @keyframes idle {

@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { exit } from '../../functions/roomfunctions';
 import './Avatar.css'
-import { useEffect} from 'react';
+import { useEffect, useRef} from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // TODO: prop info about locations dict
@@ -13,11 +13,12 @@ const Avatar = (props) => {
     // variable to store ID of gameloop (created early to prevent multiple loops)
     var gameLoopId = 0;
 
-    // constant for max movement speed
-    const max_speed = 3;
+    // constant for max movement speed in vw per tenth of a second
+    const max_speed = 0.2;
 
-    // reference of avatar
-    var avatar = null;
+    // reference of avatar and shadow hitbox
+    var avatar = useRef(null);
+    var shadow = useRef(null);
 
     // location of avatar, initialized on component mount
     var x, y;
@@ -84,19 +85,31 @@ const Avatar = (props) => {
     // game loop function
     const gameLoop = () => {
 
+        // if moving right, give avatar flipped class
+        if(dx > 0){
+            avatar.current.classList.add('flipped');
+        } else if(dx < 0){
+            // if moving left, remove flipped class
+            avatar.current.classList.remove('flipped');
+        }
+
         // set position variables
         x += dx
         y += dy
 
         // apply position variables to component
-        avatar.style.left = x + 'px';
-        avatar.style.top = y + 'px';
+        avatar.current.style.left = x + 'vw';
+        avatar.current.style.top = y + 'vw';
+
+        // apply to shadow (must be done separately to allow z-indexing)
+        shadow.current.style.left = x + 1 + 'vw';
+        shadow.current.style.top = y + 4 + 'vw';
 
         // get list of solid objects present
         const solids = document.getElementsByClassName('solid');
 
         // get current bounding box of avatar
-        const avBox = avatar.getBoundingClientRect();
+        const avBox = shadow.current.getBoundingClientRect();
 
         // loop through solid objects and check for collision with avatar
         for(var object of solids){
@@ -112,8 +125,12 @@ const Avatar = (props) => {
                 y -= dy
 
                 // apply position variables to component
-                avatar.style.left = x + 'px';
-                avatar.style.top = y + 'px';
+                avatar.current.style.left = x + 'vw';
+                avatar.current.style.top = y + 'vw';
+                
+                // apply to shadow (must be done separately to allow z-indexing)
+                shadow.current.style.left = x + 1 + 'vw';
+                shadow.current.style.top = y + 4 + 'vw';
             }
         }
 
@@ -155,24 +172,25 @@ const Avatar = (props) => {
         const queryParameters = new URLSearchParams(window.location.search)
         switch(queryParameters.get('door')){
             case 'left':
-                avatar.style.left='90%';
-                avatar.style.top='45%';
+                avatar.current.style.left='88vw';
+                avatar.current.style.top='10vw';
                 break;
             case 'right':
-                avatar.style.left='6%';
-                avatar.style.top='45%';
+                avatar.current.style.left='6vw';
+                avatar.current.style.top='10vw';
+                avatar.current.classList.add('flipped');
                 break;
             case 'up':
-                avatar.style.left='48%';
-                avatar.style.top='75%'
+                avatar.current.style.left='48vw';
+                avatar.current.style.top='16vw'
                 break;
             default:
                 break;
         }
         
         // initialize variables from above
-        x = parseInt(window.getComputedStyle( avatar, null ).getPropertyValue('left'),10)
-        y = parseInt(window.getComputedStyle( avatar, null ).getPropertyValue('top'),10)
+        x = parseInt(window.getComputedStyle( avatar.current, null ).getPropertyValue('left'),10) / window.innerWidth * 100;
+        y = parseInt(window.getComputedStyle( avatar.current, null ).getPropertyValue('top'),10) / window.innerHeight * 100;
 
 
         // set listener for keypresses on document
@@ -181,9 +199,13 @@ const Avatar = (props) => {
 
         // start game loop
         gameLoopId = setInterval(gameLoop, 10)
+
+        // unhide avatar after first gameloop
+        setTimeout(()=>{avatar.current.classList.remove('hidden');},10);
         
         // cleanup to run on component unmount
         return function cleanup() {
+            clearInterval(gameLoopId);
             document.removeEventListener('keydown', handleKeyPress);
             document.removeEventListener('keyup', handleKeyPress);
         }
@@ -191,7 +213,8 @@ const Avatar = (props) => {
 
     return(
         <>
-            <div id='avatar' ref={node => {avatar = node}}/>
+            <div id='shadow' ref={shadow}/>
+            <div id='avatar' ref={avatar} className='idle hidden'/>
         </>
     )
 }

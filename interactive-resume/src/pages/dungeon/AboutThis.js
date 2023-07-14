@@ -35,12 +35,12 @@ const AboutThis = (props) => {
                     <WallSpacer/>
                 </Wall>
 
-                <RaisedSign x='25' y='8'>
-                    <p>PLACEHOLDER - talk about this project</p>
+                <RaisedSign x='27' y='4' width='50'>
+                    <p>This interactive resume was inspired by early Legend of Zelda games and my love of vintage computers. It is written in React.js, and uses Framer Motion for animations on the landing page and the simple layout. All other components, animations, and miscellaneous code was written by me. I also created all sprites and backgrounds using Aseprite.</p>
                 </RaisedSign>
 
-                <RaisedSign x='25' y='33'>
-                    <a href="https://github.com/eshilo-draper/Interactive-Resume">Click here to view the code behind this!</a>
+                <RaisedSign x='23' y='33'>
+                    <a href="https://github.com/eshilo-draper/Interactive-Resume" target="_blank" rel="noreferrer"><p>Click here to view the code behind this!</p></a>
                 </RaisedSign>
 
             </Room>

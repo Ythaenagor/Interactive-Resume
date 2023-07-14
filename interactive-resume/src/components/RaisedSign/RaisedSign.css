@@ -1,4 +1,54 @@
 .raisedSign{
     font-family: c64;
     position: absolute;
+    line-height: 1.5vw;
+
+    border-image-source: url(../../../public/sprites/raised-platform.png);
+    border-image-slice:32;
+    border-image-width:5vw;
+    border-image-repeat:repeat repeat;
+
+    background-image: url(../../../public/sprites/raised-platform-top.png);
+    background-repeat: repeat repeat;
+    background-size: 10vw;
+
+    image-rendering: pixelated;
+
+    box-sizing: border-box;
+
+    margin:0;
+    padding:2vw 2.5vw;
+}
+
+.highlighted{
+    background-color: rgba(180, 80, 180, 0.7);
+    background-blend-mode: multiply;
+}
+
+.raisedSign *{
+    font-size: 1.2vw;
+}
+
+.raisedSign p{
+    text-indent: 3em;
+}
+
+.raisedSign a{
+    color:#533;
+    text-decoration: none;
+}
+
+.raisedSign a:hover{
+    color:#a33;
+}
+
+.raisedSign a p{
+    padding:0.5em 2em;
+    text-indent: 0;
+}
+
+.raisedSign ul{
+    text-indent: -2.5vw;
+    list-style-type: none;
+    line-height: 1.5em;
 }

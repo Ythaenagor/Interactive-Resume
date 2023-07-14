@@ -135,6 +135,7 @@ const SimpleMain = () => {
                             <p>SQL, MySQL, MongoDB</p>
                             <p>React, Angular, Node</p>
                             <p>C#, Java, Python</p>
+                            <p>ASP.Net</p>
                         </div>
                         <div className='column'>
                             <TypedText>Soft Skills</TypedText>

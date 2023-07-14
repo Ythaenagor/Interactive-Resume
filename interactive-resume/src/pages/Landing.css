@@ -3,16 +3,6 @@
     --dark-blue:#4738a5;
 }
 
-@font-face {
-    font-family: infinity;
-    src: url(../../public/fonts/MADEINFINITY\ PERSONALUSE-Regular.otf);
-}
-
-@font-face {
-    font-family: c64;
-    src: url(../../public/fonts/C64_Pro_Mono-STYLE.otf);
-}
-
 @media screen and (min-width: 1024px){
     #mobile{
         display: none;

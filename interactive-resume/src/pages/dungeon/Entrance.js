@@ -44,11 +44,12 @@ const Entrance = (props) => {
                     <WallSpacer/>
                 </Wall>
 
-                <FloorSign x='48' y='8' point='up'>Back</FloorSign>
+                <FloorSign x='48' y='9' point='up'>Back</FloorSign>
                 <FloorSign x='70' y='20' point='right'>About this project</FloorSign>
                 <FloorSign x='45' y='33' point='down'>About Me</FloorSign>
 
-                <RaisedSign x='40' y='20'><p>PLACEHOLDER</p></RaisedSign>
+                <RaisedSign x='40' y='20'><p>NAME WILL GO HERE</p></RaisedSign>
+                <RaisedSign x='30' y='25'><p>(WASD) or (ARROWS) to move</p></RaisedSign>
 
             </Room>
             {props.state !== 'unloaded' && <div className="nextRooms">

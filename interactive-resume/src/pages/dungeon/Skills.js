@@ -40,12 +40,33 @@ const Skills = (props) => {
                     <WallSpacer/>
                 </Wall>
 
-                <FloorSign point='up' x='45' y='9'>About Me</FloorSign>
+                <FloorSign point='up' x='45' y='7'>About Me</FloorSign>
 
-                <FloorSign point='left' x='9' y='22'>Experience</FloorSign>
+                <FloorSign point='left' x='9' y='20'>Experience</FloorSign>
 
-                <RaisedSign>
+                <RaisedSign x='18' y='14' width='30' highlight>
+                    <p>My Hard Skills</p>
+                </RaisedSign>
+                <RaisedSign x='14' y='26.5' width='34'>
+                    <ul>
+                        <li>&gt; HTML, CSS, Javascript</li>
+                        <li>&gt; SQL, MySQL, MongoDB</li>
+                        <li>&gt; React, Angular, Node</li>
+                        <li>&gt; C#, Java, Python</li>
+                        <li>&gt; ASP.Net</li>
+                    </ul>
+                </RaisedSign>
 
+                <RaisedSign x='53' y='14' width='30' highlight>
+                    <p>My Soft Skills</p>
+                </RaisedSign>
+                <RaisedSign x='53' y='26.5' width='37'>
+                    <ul>
+                        <li>&gt; Commitment and Patience</li>
+                        <li>&gt; Teamwork, communication</li>
+                        <li>&gt; Technical and formal writing</li>
+                        <li>&gt; Time management</li>
+                    </ul>
                 </RaisedSign>
 
             </Room>

@@ -43,9 +43,9 @@ const Experience = (props) => {
                     <WallSpacer/>
                 </Wall>
 
-                <FloorSign x='45' y='9' point='up'>Education</FloorSign>
+                <FloorSign x='45' y='7' point='up'>Education</FloorSign>
                 <FloorSign x='84' y='21' point='right'>Skills</FloorSign>
-                <FloorSign x='44' y='34' point='down'>Contact Me</FloorSign>
+                <FloorSign x='44' y='32' point='down'>Contact Me</FloorSign>
 
             </Room>
             {props.state !== 'unloaded' && <div className="nextRooms">
