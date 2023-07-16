@@ -16,3 +16,8 @@ iframe{
   font-family: c64;
   src: url(../public/fonts/C64_Pro_Mono-STYLE.otf);
 }
+
+@font-face {
+  font-family: heritage;
+  src: url(../public/fonts/Heritage-Display.otf);
+}

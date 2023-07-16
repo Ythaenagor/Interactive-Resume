@@ -17,7 +17,12 @@
 
 .idle{
     background: url(../../../public/sprites/Avatar-idle.png) 0 0;
-    animation: idle 0.5s steps(3) infinite;
+    animation: idle 0.5s steps(4) infinite;
+}
+
+.moving{
+    background: url(../../../public/sprites/Avatar-run.png) 0 0;
+    animation: run 0.75s steps(6) infinite;
 }
 
 .flipped{
@@ -36,5 +41,9 @@
 }
 
 @keyframes idle {
-    100% {background-position: 97.5%}
+    100% {background-position: 130%}
+}
+
+@keyframes run {
+    100% {background-position: 118%}
 }

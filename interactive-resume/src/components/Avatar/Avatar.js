@@ -93,6 +93,14 @@ const Avatar = (props) => {
             avatar.current.classList.remove('flipped');
         }
 
+        // if moving at all, give avatar moving class
+        if(dx !== 0 || dy !== 0){
+            avatar.current.classList.add('moving');
+        } else {
+            // otherwise go back to idle
+            avatar.current.classList.remove('moving');
+        }
+
         // set position variables
         x += dx
         y += dy

@@ -64,3 +64,30 @@
     text-align: center;
     padding-bottom:0.3em;
 }
+
+.raisedSign .title{
+    color:#300;
+    font-size: 5vw;
+    font-family: heritage;
+    padding:0em 1em 0.25em 1em;
+}
+
+.raisedSign .centered{
+    text-indent: 0;
+    text-align: center;
+    padding:0em 1em;
+}
+
+#paddedWrapper{
+    padding: 1vw;
+}
+
+.keyicon{
+    display: inline;
+    width:6vw;
+    vertical-align: middle;
+}
+
+.inline{
+    display: inline;
+}
