@@ -46,6 +46,7 @@ const TypedText = (props) => {
             initial="hidden"
             whileInView="visible"
             variants={wholetext}
+            className="typedText"
         >
             {mapLetters(text)}
         </motion.span>

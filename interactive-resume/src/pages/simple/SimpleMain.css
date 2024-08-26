@@ -23,6 +23,10 @@ canvas{
     overflow-x: hidden;
 }
 
+.typedText{
+    height: 2em;
+}
+
 @media screen and (min-width: 1024px){
     #mainBody {
         padding:3vh 10vw;
@@ -238,8 +242,8 @@ canvas{
         padding:2em;
         image-rendering: pixelated;
     
-        margin-top:3%;
-        margin-left:5%;
+        margin-top:7%;
+        margin-left:10%;
     
         position: relative;
         top:-10%;
@@ -299,6 +303,10 @@ canvas{
         justify-content: space-around;
         width:100%;
     }
+
+    #skillColumns .typedText em{
+        margin-right: -1px;
+    }
     
     .column{
         display: flex;
@@ -310,7 +318,7 @@ canvas{
         background-color: var(--label-color);
         color:white;
         padding-top: 0.5em;
-        padding-bottom: 0.5em;
+        padding-bottom: 1em;
     }
     #skillColumns em:first-of-type{
         padding-left: 1em;
@@ -462,6 +470,10 @@ canvas{
         justify-content: space-around;
         width:100%;
     }
+
+    #skillColumns .typedText em{
+        margin-right: -1px;
+    }
     
     .column{
         display: flex;
@@ -477,6 +489,7 @@ canvas{
         padding-top: 0.5em;
         padding-bottom: 0.5em;
     }
+
     #skillColumns em:first-of-type{
         padding-left: 0.5em;
     }

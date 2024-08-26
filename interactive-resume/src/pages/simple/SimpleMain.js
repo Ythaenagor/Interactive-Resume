@@ -97,8 +97,8 @@ const SimpleMain = () => {
                     transition={{duration: 1}}
                 >
                     <p className='label'>Highlights</p>
-                    <p className='bullet'><TypedText>&gt; I'm new to the field,</TypedText> and I can't wait to share my passion for problem solving with the world.</p>
-                    <p className='bullet'><TypedText>&gt; I completed my Bachelor of Science</TypedText> in Software Engineering in 2023, and gained valuable knowledge and realistic experience during my studies.</p>
+                    <p className='bullet'><TypedText>&gt; I'm a beginning software engineer,</TypedText> eager to continue to express my passion for problem solving and expanding my abilities.</p>
+                    <p className='bullet'><TypedText>&gt; I completed my Bachelor of Science</TypedText> in Software Engineering in 2023, and currently have one year of real-world web development experience</p>
                     <p className='bullet'><TypedText>&gt; I am creative and detail oriented</TypedText> and committed to writing clean, efficient code that matches style guides and best practices.</p>
                 </motion.div>
 
@@ -130,7 +130,8 @@ const SimpleMain = () => {
                     <p className='label'>My Proficiencies</p>
                     <div id='skillColumns'>
                         <div className='column'>
-                            <TypedText>Hard Skills</TypedText>
+                            <TypedText>Hard</TypedText>
+                            <TypedText>Skills</TypedText>
                             <p>HTML, CSS, Javascript</p>
                             <p>SQL, MySQL, MongoDB</p>
                             <p>React, Angular, Node</p>
@@ -138,7 +139,8 @@ const SimpleMain = () => {
                             <p>ASP.Net</p>
                         </div>
                         <div className='column'>
-                            <TypedText>Soft Skills</TypedText>
+                            <TypedText>Soft</TypedText>
+                            <TypedText>Skills</TypedText>
                             <p>Commitment and Patience</p>
                             <p>Teamwork and communication</p>
                             <p>Technical and formal writing</p>
@@ -155,6 +157,16 @@ const SimpleMain = () => {
                     transition={{duration: 1}}
                 >
                     <p className='label'>Experience</p>
+
+                    <p className='bullet'><TypedText>Junior Web Developer at CrossTrainer</TypedText></p>
+                    <div className='list'>
+                        <p className='bullet'><TypedText>&gt;&emsp;</TypedText>Maintained and updated proprietary web-based software for both desktop and mobile devices</p>
+                        <p className='bullet'><TypedText>&gt;&emsp;</TypedText>Developed custom WordPress plugins for company and client sites</p>
+                        <p className='bullet'><TypedText>&gt;&emsp;</TypedText>Assisted in site maintenance and LMS management</p>
+                        <p className='bullet'><TypedText>&gt;&emsp;</TypedText>Used both WordPress editors and custom HTML/CSS to customize client sites</p>
+                        <p className='bullet'><TypedText>&gt;&emsp;</TypedText>Completed and tested quality work in a timely manner</p>
+                    </div>
+                    <br/>
                     <p className='bullet'><TypedText>IT Helpdesk Technician at NEIT</TypedText></p>
                     <div className='list'>
                         <p className='bullet'><TypedText>&gt;&emsp;</TypedText>Assisted in management and support of college’s IT infrastructure</p>
@@ -162,7 +174,6 @@ const SimpleMain = () => {
                         <p className='bullet'><TypedText>&gt;&emsp;</TypedText>Managed and installed software and hardware across all campus computer labs</p>
                         <p className='bullet'><TypedText>&gt;&emsp;</TypedText>Worked well both independently and as part of the Help Desk team</p>
                     </div>
-                    <p className='bullet'><i>Unfortunately, I do not currently have industry experience in software development, but my experience at NEIT ensures that I will not take long to adapt to a real production environment!</i></p>
                 </motion.div>
             </div>
 

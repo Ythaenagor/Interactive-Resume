@@ -14,7 +14,7 @@ const Landing = () => {
                     <p className='left-aligned'>Choose how you want to view my resume:</p>
                     <button className='menu-button' onClick={()=>{navigate('/dungeon')}}>&gt; Show me the interactive version</button>
                     <button className='menu-button' onClick={()=>{navigate('/simple')}}>&gt; I'm low on time, show me the simple version</button>
-                    <button className='menu-button' onClick={()=>{navigate('/')}}>&gt; I'm very low on time, show me a PDF</button>
+                    <button className='menu-button' onClick={()=>{window.open('/resume.pdf', '_blank')}}>&gt; I'm very low on time, show me a PDF</button>
                 </div>
             </div>
             <div id='mobile'>
