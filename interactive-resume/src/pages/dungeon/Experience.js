@@ -7,6 +7,7 @@ import FloorSign from "../../components/FloorSign/FloorSign";
 import Skills from "./Skills";
 import Contact from "./Contact";
 import RaisedSign from "../../components/RaisedSign/RaisedSign";
+import ITDesk from "./ITDesk";
 
 // TODO: prop info for state
 const Experience = (props) => {
@@ -15,7 +16,8 @@ const Experience = (props) => {
     const nextRoomLocations = {
         'right':'/skills',
         'up':'/education',
-        'down':'/contact'
+        'down':'/contact',
+        'left':'/itdesk'
     }
 
     return(
@@ -23,6 +25,10 @@ const Experience = (props) => {
             <Room state={props.state} d={props.state === 'unloaded' ? props.d : 'currentRoom'} nextRooms={nextRoomLocations}>
                 
                 <Wall side='left'>
+                    <WallSpacer/>
+                    <Door side='left'/>
+                    <WallSpacer/>
+                    <WallSpacer/>
                     <WallSpacer/>
                 </Wall>
 
@@ -47,30 +53,29 @@ const Experience = (props) => {
                     <WallSpacer/>
                 </Wall>
 
-                <FloorSign x='59.3' y='7' point='up'>Education</FloorSign>
-                <FloorSign x='84' y='21' point='right'>Skills</FloorSign>
-                <FloorSign x='66' y='32' point='down'>Contact Me</FloorSign>
+                <FloorSign x='55' y='7' point='up'>Education</FloorSign>
+                <FloorSign x='75' y='21' point='right'>&nbsp;&nbsp;&nbsp;Skills</FloorSign>
+                <FloorSign x='5' y='9.5' point='left'>Previous Experience</FloorSign>
+                <FloorSign x='62' y='29' point='down'>Contact Me</FloorSign>
 
                 <RaisedSign highlight x='6' y='6'>
-                    <h1>NEIT-IT Help Desk Technician</h1>
+                    <h1>CrossTrainer - Junior Web Developer</h1>
                 </RaisedSign>
-                <RaisedSign x='6' y='15.5' width='50'>
+                <RaisedSign x='6' y='17.5' width='58'>
                     <ul>
-                        <li>&gt; Assisted in management and support of college’s IT infrastructure</li>
-                        <li>&gt; Assisted students and faculty with technical issues in hardware and software</li>
-                        <li>&gt; Managed and installed software and hardware across all campus computer labs</li>
-                        <li>&gt; Worked well both independently and as part of the Help Desk team</li>
+                        <li>&gt; Maintained and updated proprietary web-based software for both desktop and mobile</li>
+                        <li>&gt; Developed custom WordPress plugins for company and client sites</li>
+                        <li>&gt; Assisted in site maintenance and LMS mgmt</li>
+                        <li>&gt; Used both WordPress editors and custom HTML/CSS to customize client sites</li>
+                        <li>&gt; Completed and tested quality work in a timely manner</li>
                     </ul>
                 </RaisedSign>
-                <RaisedSign x='56' y='15.5' width='25' highlight small>
-                    <p>Unfortunately, I do not currently have industry experience in software development, but my experience at NEIT ensures that I will not take long to adapt to a real production environment!</p>
-                </RaisedSign>
-
             </Room>
             {props.state !== 'unloaded' && <div className="nextRooms">
                 <Education d='up' state='unloaded'/>
                 <Skills d='right' state='unloaded'/>
                 <Contact d='down' state='unloaded'/>
+                <ITDesk d='left' state='unloaded'/>
             </div>}
         </>
     )

@@ -2,18 +2,16 @@ import Room from "../../components/Room/Room";
 import Wall from "../../components/Wall/Wall";
 import Door from "../../components/Door/Door";
 import WallSpacer from "../../components/WallSpacer/WallSpacer";
-import AboutMe from "./AboutMe";
 import FloorSign from "../../components/FloorSign/FloorSign";
 import RaisedSign from "../../components/RaisedSign/RaisedSign";
 import Experience from "./Experience";
 
 // TODO: prop info for state
-const Education = (props) => {
+const ITDesk = (props) => {
 
     // dictionary translating directions to urls
     const nextRoomLocations = {
-        'right':'/aboutme',
-        'down':'/experience'
+        'right':'/experience',
     }
 
     return(
@@ -28,6 +26,8 @@ const Education = (props) => {
                     <WallSpacer/>
                     <Door side='right'/>
                     <WallSpacer/>
+                    <WallSpacer/>
+                    <WallSpacer/>
                 </Wall>
 
                 <Wall side='up'>
@@ -36,37 +36,27 @@ const Education = (props) => {
 
                 <Wall side='down'>
                     <WallSpacer/>
-                    <WallSpacer/>
-                    <Door side='down'/>
-                    <WallSpacer/>
                 </Wall>
 
-                <FloorSign x='75' y='23' point='right'>&nbsp;&nbsp;&nbsp;About Me</FloorSign>
-                <FloorSign x='55' y='33' point='down'>Experience</FloorSign>
+                <FloorSign x='75' y='12' point='right'>Most Recent Experience</FloorSign>
 
-                <RaisedSign x='18' y='6' highlight>
-                    <h1>High School</h1>
+                <RaisedSign highlight x='6' y='6'>
+                    <h1>NEIT-IT Help Desk Technician</h1>
                 </RaisedSign>
-
-                <RaisedSign x='6' y='15' width='30'>
-                    <p>Graduated from the International Baccaleaureate Program at Pioneer Valley Chinese Immersion Charter School</p>
+                <RaisedSign x='6' y='15.5' width='50'>
+                    <ul>
+                        <li>&gt; Assisted in management and support of college’s IT infrastructure</li>
+                        <li>&gt; Assisted students and faculty with technical issues in hardware and software</li>
+                        <li>&gt; Managed and installed software and hardware across all campus computer labs</li>
+                        <li>&gt; Worked well both independently and as part of the Help Desk team</li>
+                    </ul>
                 </RaisedSign>
-
-                <RaisedSign x='38' y='6' highlight>
-                    <h1>College</h1>
-                </RaisedSign>
-
-                <RaisedSign x='38' y='15' width='30'>
-                    <p>Graduated with honors and a perfect 4.0 GPA, member Phi Theta Kappa, with a Bachelor of Science in Software Engineering from New England Institute of Technology</p>
-                </RaisedSign>
-
             </Room>
             {props.state !== 'unloaded' && <div className="nextRooms">
-                <AboutMe d='right' state='unloaded'/>
-                <Experience d='down' state='unloaded'/>
+                <Experience d='right' state='unloaded'/>
             </div>}
         </>
     )
 }
 
-export default Education;
+export default ITDesk;

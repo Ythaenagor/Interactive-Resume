@@ -36,7 +36,7 @@ const AboutThis = (props) => {
                     <WallSpacer/>
                 </Wall>
 
-                <FloorSign point='left' x='10' y='21'>Entrance</FloorSign>
+                <FloorSign point='left' x='5' y='22'>Entrance</FloorSign>
 
                 <RaisedSign x='27' y='4' width='50'>
                     <p>This interactive resume was inspired by early Legend of Zelda games and my love of vintage computers. It is written in React.js, and uses Framer Motion for animations on the landing page and the simple layout. All other components, animations, and miscellaneous code was written by me. I also created all sprites and backgrounds using Aseprite.</p>

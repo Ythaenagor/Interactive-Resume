@@ -192,8 +192,14 @@ const Avatar = (props) => {
                     avatar.current.style.left='90vw'
                     break;
                 case 'right':
-                    avatar.current.style.left='6vw';
-                    avatar.current.style.top='22vw';
+                    // select relevant door from current room
+                    entryDoor = document.getElementById('currentRoom').getElementsByClassName('doorleft')[0];
+                    doorShape = entryDoor.getBoundingClientRect();
+
+                    // place avatar relative to center of door
+                    avatar.current.style.top=(doorShape.top+doorShape.bottom)*0.38 + 'px';
+                    avatar.current.style.left='5vw'
+
                     avatar.current.classList.add('flipped');
                     break;
                 case 'up':

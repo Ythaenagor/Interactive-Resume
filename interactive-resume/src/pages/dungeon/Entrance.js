@@ -44,15 +44,15 @@ const Entrance = (props) => {
                     <WallSpacer/>
                 </Wall>
 
-                <FloorSign x='48' y='9' point='up'>Back</FloorSign>
-                <FloorSign x='70' y='20' point='right'>About this project</FloorSign>
-                <FloorSign x='45' y='31.5' point='down'>About Me</FloorSign>
+                <FloorSign x='40' y='7' point='up'>Back</FloorSign>
+                <FloorSign x='75' y='20' point='right'>About this project</FloorSign>
+                <FloorSign x='40' y='30.5' point='down'>About Me</FloorSign>
 
-                <RaisedSign x='30' y='13'>
+                <RaisedSign x='30' y='11'>
                     <h1 className="title">Ethan Shilo-Draper</h1>
                     <p className='centered'>Software Engineer</p>
                 </RaisedSign>
-                <RaisedSign x='34' y='27'>
+                <RaisedSign x='34' y='25'>
                     <div id='paddedWrapper'>
                         <img className='keyicon' src='sprites/arrowkeys.png' alt='arrow keys' />
                         <p className='inline'>&nbsp;or&nbsp;</p>

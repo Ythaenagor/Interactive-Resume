@@ -15,6 +15,7 @@ import Skills from './pages/dungeon/Skills';
 import Education from './pages/dungeon/Education';
 import Experience from './pages/dungeon/Experience';
 import Contact from './pages/dungeon/Contact';
+import ITDesk from './pages/dungeon/ITDesk';
 
 const App = () => {
 
@@ -32,6 +33,7 @@ const App = () => {
         <Route path="/education"  element={<Education/>}/>
         <Route path="/experience" element={<Experience/>}/>
         <Route path="/contact"    element={<Contact/>}/>
+        <Route path="/itdesk"     element={<ITDesk/>}/>
       </Routes>
     </AnimatePresence>
   );

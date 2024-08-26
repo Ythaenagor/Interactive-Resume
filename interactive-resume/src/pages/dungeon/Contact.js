@@ -38,7 +38,7 @@ const Contact = (props) => {
                     <WallSpacer/>
                 </Wall>
 
-                <FloorSign x='66.5' y='9' point='up'>Experience</FloorSign>
+                <FloorSign x='62.5' y='7' point='up'>Experience</FloorSign>
 
                 <RaisedSign x='6' y='6' width='50'>
                     <h1>Thank you for your time! If I've piqued your interest, here's how you can contact me:</h1>

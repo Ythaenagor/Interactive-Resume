@@ -44,11 +44,11 @@ const AboutMe = (props) => {
                     <WallSpacer/>
                 </Wall>
 
-                <FloorSign point='up' x='45' y='7'>Entrance</FloorSign>
+                <FloorSign point='up' x='40' y='7'>Entrance</FloorSign>
 
-                <FloorSign point='left' x='10' y='21'>Education</FloorSign>
+                <FloorSign point='left' x='5' y='21'>Education</FloorSign>
 
-                <FloorSign x='46' y='33' point='down'>Skills</FloorSign>
+                <FloorSign x='40' y='33' point='down'>Skills</FloorSign>
 
                 <RaisedSign x='25' y='11' width='50'>
                     <p>Hello! I'm Ethan Shilo-Draper, a software engineer from Western Massachusetts. I have just recently graduated from NEIT, and I'm excited to share my skills while continuing to improve them! I have a passion for problem solving and a commitment to optimization.</p>
