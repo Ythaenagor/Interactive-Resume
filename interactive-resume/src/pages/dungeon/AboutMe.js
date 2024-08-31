@@ -51,7 +51,7 @@ const AboutMe = (props) => {
                 <FloorSign x='40' y='33' point='down'>Skills</FloorSign>
 
                 <RaisedSign x='25' y='11' width='50'>
-                    <p>Hello! I'm Ethan Shilo-Draper, a software engineer from Western Massachusetts. I have just recently graduated from NEIT, and I'm excited to share my skills while continuing to improve them! I have a passion for problem solving and a commitment to optimization.</p>
+                    <p>Hello! I'm Ethan Shilo-Draper, a software engineer from Western Massachusetts. I am a relative newcomer to the field, and I'm excited to share my skills while continuing to improve them! I have a passion for problem solving and a commitment to optimization.</p>
                     <p>Besides a programmer, I'm a music lover, a retro game enthusiast, and an amateur artist. I look forward to working with you!</p>
                 </RaisedSign>
 
